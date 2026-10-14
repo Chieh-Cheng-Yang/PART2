@@ -5,9 +5,8 @@
 #/*                                                */
 #/* OSU FreePDK 45nm                               */
 #/**************************************************/
-# [MOD] Copy of the provided compile_with_sram.tcl. Every edited line is
-# [MOD] tagged with "[MOD]". Run from a fresh directory (see synth/Makefile).
-# [MOD] ORIGINAL single-cycle design (flip-flop memories). SRAM lines removed.
+# [MOD] Copy of the Lab 0 compile_dc.tcl. Every edited line is tagged [MOD].
+# [MOD] ORIGINAL single-cycle design (flip-flop memories).
 
 #/* All verilog files, separated by spaces         */
 set my_verilog_files [list ../../original/top.v ../../original/controller.v ../../original/datapath.v]   ;# [MOD]
@@ -32,16 +31,12 @@ set my_output_delay_ns 0.1
 #/**************************************************/
 #/* No modifications needed below                  */
 #/**************************************************/
-# [MOD] SRAM_DIR / SRAM_FILES removed: no SRAM macro in this design
 set OSU_FREEPDK [format "%s%s"  [getenv "PDK_DIR"] "/osu_soc/lib/files"]
-
-set search_path [concat  $search_path $OSU_FREEPDK]   ;# [MOD] $SRAM_DIR removed
+set search_path [concat  $search_path $OSU_FREEPDK]
 set alib_library_analysis_path $OSU_FREEPDK
 
-set target_library [list gscl45nm.db dw_foundation.sldb]
-
-set link_library [concat "*" $target_library]        ;# [MOD] $SRAM_FILES removed
-
+set link_library [set target_library [concat  [list gscl45nm.db] [list dw_foundation.sldb]]]
+set target_library "gscl45nm.db"
 define_design_lib WORK -path ./WORK
 set verilogout_show_unconnected_pins "true"
 set_ultra_optimization true
@@ -75,7 +70,7 @@ set_driving_cell  -lib_cell INVX1  [all_inputs]
 set_input_delay $my_input_delay_ns -clock $clk_name [remove_from_collection [all_inputs] $my_clock_pin]
 set_output_delay $my_output_delay_ns -clock $clk_name [all_outputs]
 
-compile -map_effort medium
+compile -ungroup_all -map_effort medium
 
 compile -incremental_mapping -map_effort medium
 
@@ -95,7 +90,7 @@ redirect timing.rep { report_timing }
 redirect cell.rep { report_cell }
 redirect power.rep { report_power }
 redirect area.rep { report_area }
-redirect area_hier.rep { report_area -hierarchy }   ;# [MOD] area per block (imem/dmem/mips)
+redirect area_hier.rep { report_area -hierarchy }   ;# [MOD] area per block (imem/dmem/rest)
 redirect qor.rep { report_qor }                     ;# [MOD] summary: critical path length, slack, area
 
 quit
