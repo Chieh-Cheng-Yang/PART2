@@ -1,0 +1,30 @@
+# prog_fwd.asm: addr  machine-code  assembly
+  0x00  20010003   addi $1, $0, 3          
+  0x04  20020004   addi $2, $0, 4          
+  0x08  00221820   add  $3, $1, $2         # 7    $2 from MEM (ALUOutM), $1 from WB (ResultW)
+  0x0c  00632020   add  $4, $3, $3         # 14   both operands from MEM
+  0x10  00832820   add  $5, $4, $3         # 21   $4 from MEM, $3 from WB
+  0x14  00a52820   add  $5, $5, $5         # 42   both from MEM
+  0x18  00a43020   add  $6, $5, $4         # 56   $5 from MEM, $4 from register file
+  0x1c  00210020   add  $0, $1, $1         # writes $0: must NOT be forwarded
+  0x20  00063820   add  $7, $0, $6         # 56   $0 reads 0, $6 from WB
+  0x24  00215020   add  $10, $1, $1        # 6
+  0x28  00425020   add  $10, $2, $2        # 8    same destination twice in a row
+  0x2c  01475820   add  $11, $10, $7       # 64   $10 must come from MEM (newest), not WB (6)
+  0x30  016b6020   add  $12, $11, $11      # 128
+  0x34  ac010028   sw   $1, 40($0)         # store 3 so the next lw has data
+  0x38  8c0d0028   lw   $13, 40($0)        # $13 = 3
+  0x3c  01ac7020   add  $14, $13, $12      # 131  load-use: 1-cycle stall, then $13 from WB
+  0x40  01ce7820   add  $15, $14, $14      # 262
+  0x44  ac030000   sw   $3, 0($0)          
+  0x48  ac040004   sw   $4, 4($0)          
+  0x4c  ac050008   sw   $5, 8($0)          
+  0x50  ac06000c   sw   $6, 12($0)         
+  0x54  ac070010   sw   $7, 16($0)         
+  0x58  ac0b0014   sw   $11, 20($0)        
+  0x5c  ac0c0018   sw   $12, 24($0)        
+  0x60  ac0e001c   sw   $14, 28($0)        
+  0x64  ac0f0020   sw   $15, 32($0)        
+  0x68  8c100020   lw   $16, 32($0)        # $16 = 262
+  0x6c  02018820   add  $17, $16, $1       # 265  load-use again
+  0x70  ac110024   sw   $17, 36($0)        
