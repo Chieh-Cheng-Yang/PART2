@@ -1,0 +1,77 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : top
+Version: V-2023.12-SP5-1
+Date   : Wed Oct 14 02:56:55 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: mips/dp/rf/rf_reg[11][19]
+              (falling edge-triggered flip-flop clocked by clk)
+  Endpoint: mips/dp/pcreg/q_reg[12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (fall edge)                                   0.50       0.50
+  clock network delay (ideal)                             0.00       0.50
+  mips/dp/rf/rf_reg[11][19]/CLK (DFFNEGX1)                0.00 #     0.50 f
+  mips/dp/rf/rf_reg[11][19]/Q (DFFNEGX1)                  0.06       0.56 r
+  mips/dp/rf/U2996/Y (OR2X2)                              0.04       0.59 r
+  mips/dp/rf/U2995/Y (OAI21X1)                            0.01       0.61 f
+  mips/dp/rf/U447/Y (NOR2X1)                              0.03       0.63 r
+  mips/dp/rf/U449/Y (INVX1)                               0.02       0.65 f
+  mips/dp/rf/U448/Y (NOR2X1)                              0.03       0.68 r
+  mips/dp/rf/U2985/Y (AOI22X1)                            0.03       0.71 f
+  mips/dp/rf/U308/Y (AOI21X1)                             0.05       0.76 r
+  mips/dp/rf/rd1[19] (regfile)                            0.00       0.76 r
+  mips/dp/forwardadmux/d0[19] (mux2_WIDTH32_3)            0.00       0.76 r
+  mips/dp/forwardadmux/U11/Y (AOI21X1)                    0.03       0.79 f
+  mips/dp/forwardadmux/U13/Y (INVX1)                      0.01       0.81 r
+  mips/dp/forwardadmux/y[19] (mux2_WIDTH32_3)             0.00       0.81 r
+  mips/dp/U360/Y (XNOR2X1)                                0.03       0.84 f
+  mips/dp/U359/Y (AND2X2)                                 0.03       0.87 f
+  mips/dp/U826/Y (NAND3X1)                                0.04       0.91 r
+  mips/dp/U827/Y (NOR3X1)                                 0.03       0.94 f
+  mips/dp/U475/Y (NAND3X1)                                0.04       0.97 r
+  mips/dp/U834/Y (NOR3X1)                                 0.03       1.00 f
+  mips/dp/U499/Y (AND2X2)                                 0.04       1.05 f
+  mips/dp/pcbrmux/s (mux2_WIDTH32_5)                      0.00       1.05 f
+  mips/dp/pcbrmux/U4/Y (INVX4)                            0.02       1.07 r
+  mips/dp/pcbrmux/U40/Y (INVX8)                           0.03       1.10 f
+  mips/dp/pcbrmux/U53/Y (MUX2X1)                          0.03       1.13 f
+  mips/dp/pcbrmux/U26/Y (INVX1)                           0.00       1.13 r
+  mips/dp/pcbrmux/y[12] (mux2_WIDTH32_5)                  0.00       1.13 r
+  mips/dp/pcmux/d0[12] (mux2_WIDTH32_4)                   0.00       1.13 r
+  mips/dp/pcmux/U8/Y (NAND2X1)                            0.01       1.14 f
+  mips/dp/pcmux/U35/Y (OAI21X1)                           0.02       1.17 r
+  mips/dp/pcmux/y[12] (mux2_WIDTH32_4)                    0.00       1.17 r
+  mips/dp/pcreg/d[12] (flopenr_WIDTH32)                   0.00       1.17 r
+  mips/dp/pcreg/U85/Y (MUX2X1)                            0.03       1.19 f
+  mips/dp/pcreg/U62/Y (INVX1)                             0.00       1.20 r
+  mips/dp/pcreg/q_reg[12]/D (DFFSR)                       0.00       1.20 r
+  data arrival time                                                  1.20
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  mips/dp/pcreg/q_reg[12]/CLK (DFFSR)                     0.00       1.00 r
+  library setup time                                     -0.07       0.93
+  data required time                                                 0.93
+  --------------------------------------------------------------------------
+  data required time                                                 0.93
+  data arrival time                                                 -1.20
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.27
+
+
+1

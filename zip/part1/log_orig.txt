@@ -1,0 +1,21 @@
+1 module and 0 UDP read.
+../simv up to date
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Memory write 1 successful : wrote 00000007 to address 00000050
+Memory write 2 successful : wrote 00000007 to address 00000054
+------------------------------------------------------------
+ Test             : ORIG (original lab program)
+ Design           : 5-stage pipeline
+ Memory writes    : 2 of 2 checked, 0 error(s)
+ Instructions     : 16 (reference model: 16)              
+ Cycles           : 34 (first fetch to last writeback)
+ CPI / IPC        : 2.125 / 0.471
+ Stall cycles     : 12 (load-use 0, non-ADD dependency 10, branch operand 2)
+ Branches         : 1 taken, 1 not taken; 2 instruction(s) flushed
+ Forwarding       : ALU from MEM 2, ALU from WB 0, comparator from MEM 2
+------------------------------------------------------------
+TEST PASSED
+TEST COMPLETE
+$finish called from file "testbench.sv", line 222.
+$finish at simulation time               390000

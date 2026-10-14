@@ -1,0 +1,72 @@
+ 
+****************************************
+Report : area
+Design : top
+Version: V-2023.12-SP5-1
+Date   : Wed Oct 14 02:56:56 2026
+****************************************
+
+Library(s) Used:
+
+    gscl45nm (File: /usr/local2/cadence/NCSU/SRC/FreePDK45/osu_soc/lib/files/gscl45nm.db)
+    gtech (File: /usr/local2/synopsys/syn_2023.12-SP51/libraries/syn/gtech.db)
+    SRAM_32x64_1rw_TT_1p1V_25C_lib (File: /usr/local2/COURSES/ADDV/LAB2/sram_32x64/SRAM_32x64_1rw.db)
+
+Number of ports:                         2266
+Number of nets:                         12605
+Number of cells:                        10492
+Number of combinational cells:           8712
+Number of sequential cells:              1383
+Number of macros/black boxes:               2
+Number of buf/inv:                       2658
+Number of references:                       3
+
+Combinational area:              21133.517289
+Buf/Inv area:                     4128.432043
+Noncombinational area:           11876.105698
+Macro/Black Box area:            14645.611328
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 47655.234315
+Total area:                 undefined
+
+Information: This design contains unmapped logic. (RPT-7)
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area              Local cell area
+                                  -------------------  ---------------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes       Design
+--------------------------------  ----------  -------  ----------  ----------  ----------  -------------------
+top                               47655.2343    100.0      0.0000      0.0000      0.0000  top
+dmem                               7322.8057     15.4      0.0000      0.0000   7322.8057  dmem
+imem                               7322.8057     15.4      0.0000      0.0000   7322.8057  imem
+mips                              33009.6230     69.3      0.0000      0.0000      0.0000  mips
+mips/c                               94.7986      0.2      0.0000      0.0000      0.0000  controller
+mips/c/ad                            36.6054      0.1     36.6054      0.0000      0.0000  aludec
+mips/c/md                            58.1932      0.1     58.1932      0.0000      0.0000  maindec
+mips/dp                           32914.8244     69.1   1747.2039   3376.1443      0.0000  datapath
+mips/dp/add_118                     554.2433      1.2    554.2433      0.0000      0.0000  datapath_DW01_add_2
+mips/dp/add_74                      255.7685      0.5    255.7685      0.0000      0.0000  datapath_DW01_add_3
+mips/dp/alu                        2275.1664      4.8    420.9621      0.0000      0.0000  alu
+mips/dp/alu/add_336                 738.6782      1.6    738.6782      0.0000      0.0000  alu_DW01_add_1
+mips/dp/alu/lt_338                  322.4091      0.7    322.4091      0.0000      0.0000  alu_DW_cmp_1
+mips/dp/alu/sub_337                 793.1170      1.7    793.1170      0.0000      0.0000  alu_DW01_sub_1
+mips/dp/forwardadmux                288.6195      0.6    288.6195      0.0000      0.0000  mux2_WIDTH32_3
+mips/dp/forwardaemux                384.3567      0.8    384.3567      0.0000      0.0000  mux3_WIDTH32_1
+mips/dp/forwardbdmux                293.3125      0.6    293.3125      0.0000      0.0000  mux2_WIDTH32_2
+mips/dp/forwardbemux                278.7642      0.6    278.7642      0.0000      0.0000  mux3_WIDTH32_0
+mips/dp/pcbrmux                     189.5972      0.4    189.5972      0.0000      0.0000  mux2_WIDTH32_5
+mips/dp/pcmux                       236.5272      0.5    236.5272      0.0000      0.0000  mux2_WIDTH32_4
+mips/dp/pcreg                       505.9054      1.1    175.5182    330.3872      0.0000  flopenr_WIDTH32
+mips/dp/resmux                      193.3516      0.4    193.3516      0.0000      0.0000  mux2_WIDTH32_0
+mips/dp/rf                        22127.4946     46.4  13957.9204   8169.5742      0.0000  regfile
+mips/dp/se                            2.8158      0.0      2.8158      0.0000      0.0000  signext
+mips/dp/srcbmux                     180.6805      0.4    180.6805      0.0000      0.0000  mux2_WIDTH32_1
+mips/dp/wrmux                        24.8729      0.1     24.8729      0.0000      0.0000  mux2_WIDTH5
+--------------------------------  ----------  -------  ----------  ----------  ----------  -------------------
+Total                                                  21133.5173  11876.1057  14645.6113
+
+1

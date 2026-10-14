@@ -1,0 +1,33 @@
+ 
+****************************************
+Report : area
+Design : top
+Version: V-2023.12-SP5-1
+Date   : Wed Oct 14 02:56:23 2026
+****************************************
+
+Library(s) Used:
+
+    gscl45nm (File: /usr/local2/cadence/NCSU/SRC/FreePDK45/osu_soc/lib/files/gscl45nm.db)
+    gtech (File: /usr/local2/synopsys/syn_2023.12-SP51/libraries/syn/gtech.db)
+
+Number of ports:                         2360
+Number of nets:                          8248
+Number of cells:                         6054
+Number of combinational cells:           3676
+Number of sequential cells:              2195
+Number of macros/black boxes:               0
+Number of buf/inv:                        818
+Number of references:                      21
+
+Combinational area:              10681.737295
+Buf/Inv area:                     1212.201886
+Noncombinational area:            1507.391632
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 12189.128927
+Total area:                 undefined
+
+Information: This design contains unmapped logic. (RPT-7)
+1

@@ -245,7 +245,6 @@ verdi_config_file
 
 # Design Compiler work dirs and intermediates
 WORK/
-run_*/
 alib-52/
 *.syn
 *.pvl
@@ -258,10 +257,10 @@ command.log
 default.svf
 
 # Reports and logs
-*.log
-*.rep
-*.rpt
-log_*.txt
+# *.log
+# *.rep
+# *.rpt
+# log_*.txt
 
 # Compiled databases (keep the SRAM macro library, it is a synthesis input)
 *.db
@@ -273,3 +272,8 @@ log_*.txt
 
 # Submission archives
 *.zip
+
+!synth/run_*/
+synth/run_*/*
+!synth/run_*/*.rep
+!synth/run_*/*.log

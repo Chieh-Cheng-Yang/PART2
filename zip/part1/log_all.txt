@@ -1,0 +1,36 @@
+The design hasn't changed and need not be recompiled. 
+If you really want to, delete file /home/a34490_asu/lab2/zip/part1/simv.daidir/.vcs.timestamp and
+run VCS again.
+
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Memory write 1 successful : wrote 00000011 to address 00000000
+Memory write 2 successful : wrote 00000007 to address 00000004
+Memory write 3 successful : wrote 00000004 to address 00000008
+Memory write 4 successful : wrote 0000000d to address 0000000c
+Memory write 5 successful : wrote 00000001 to address 00000010
+Memory write 6 successful : wrote 00000000 to address 00000014
+Memory write 7 successful : wrote 00000001 to address 00000018
+Memory write 8 successful : wrote fffffff1 to address 0000001c
+Memory write 9 successful : wrote fffffffd to address 00000020
+Memory write 10 successful : wrote fffffff8 to address 00000024
+Memory write 11 successful : wrote fffffff1 to address 00000034
+Memory write 12 successful : wrote fffffff1 to address 0000002c
+Memory write 13 successful : wrote 00000005 to address 00000030
+Memory write 14 successful : wrote 00000007 to address 0000003c
+Memory write 15 successful : wrote 0000000d to address 00000044
+------------------------------------------------------------
+ Test             : ALL  (all instructions)
+ Design           : 5-stage pipeline
+ Memory writes    : 15 of 15 checked, 0 error(s)
+ Instructions     : 33 (reference model: 33)              
+ Cycles           : 44 (first fetch to last writeback)
+ CPI / IPC        : 1.333 / 0.750
+ Stall cycles     : 5 (load-use 2, non-ADD dependency 3, branch operand 0)
+ Branches         : 1 taken, 1 not taken; 2 instruction(s) flushed
+ Forwarding       : ALU from MEM 0, ALU from WB 2, comparator from MEM 0
+------------------------------------------------------------
+TEST PASSED
+TEST COMPLETE
+$finish called from file "testbench.sv", line 222.
+$finish at simulation time               490000

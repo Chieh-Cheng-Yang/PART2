@@ -37,6 +37,13 @@ _single:
 wave:
 	$(MAKE) test TEST=$(TEST) DEFS="$(DEFS) +define+DUMP"
 
+# Verdi: FSDB dump (needs -kdb), then open nWave with the matching play script
+waves_verdi:
+	cp tests/memfile_$(TEST).dat memfile.dat
+	$(VCS_HOME)/bin/vcs -full64 -sverilog -timescale=1ns/1ps -debug_access+all -kdb -lca +define+FSDB $(TDEF) $(DEFS) $(TB) $(RTL) -o simv -l compile_verdi.log
+	./simv -q -no_save
+	$(VERDI_HOME)/bin/verdi -dbdir ./simv.daidir -ssf waveform.fsdb -play waves_$(TEST).tcl -nologo &
+
 regress:
 	@for t in all fwd br orig; do \
 	  $(MAKE) -s test TEST=$$t > log_$$t.txt 2>&1; \
@@ -57,4 +64,5 @@ ipc:
 	@cp tests/memfile_all.dat memfile.dat
 
 clean:
-	rm -rf simv simv.daidir csrc simv.out ucli.key compile.log log_*.txt *.vcd *.fsdb novas* verdiLog
+	rm -rf simv simv.daidir csrc simv.out ucli.key compile.log compile_verdi.log log_*.txt *.vcd *.fsdb \
+	       DVEFiles vcdplus.vpd novas.conf novas.rc novas.log novas_dump.log verdi_config_file verdiLog
