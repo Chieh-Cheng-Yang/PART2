@@ -216,3 +216,60 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ===== EDA tools (VCS / Verdi / Design Compiler) =====
+
+# VCS build and simulation outputs
+simv
+simv.out
+simv.daidir/
+simv.vdb/
+csrc/
+DVEFiles/
+ucli.key
+vc_hdrs.h
+cksum_dir/
+.vcs.timestamp
+
+# Waveform dumps
+*.vcd
+*.vpd
+*.fsdb
+*.fst
+*.wlf
+
+# Verdi
+novas*
+verdiLog/
+verdi_config_file
+
+# Design Compiler work dirs and intermediates
+WORK/
+run_*/
+alib-52/
+*.syn
+*.pvl
+*.mr
+*.svf
+*.ddc
+*.sdf
+*.sdc
+command.log
+default.svf
+
+# Reports and logs
+*.log
+*.rep
+*.rpt
+log_*.txt
+
+# Compiled databases (keep the SRAM macro library, it is a synthesis input)
+*.db
+!sram_32x64/*.db
+
+# Object files / archives
+*.o
+*.a
+
+# Submission archives
+*.zip

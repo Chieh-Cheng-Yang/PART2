@@ -40,9 +40,9 @@ wave:
 # Verdi: FSDB dump (needs -kdb), then open nWave with the matching play script
 waves_verdi:
 	cp tests/memfile_$(TEST).dat memfile.dat
-	vcs -full64 -sverilog -timescale=1ns/1ps -debug_access+all -kdb -q +define+FSDB $(TDEF) $(DEFS) $(TB) $(RTL) -o simv -l compile.log
+	$(VCS_HOME)/bin/vcs -full64 -sverilog -timescale=1ns/1ps -debug_access+all -kdb -lca +define+FSDB $(TDEF) $(DEFS) $(TB) $(RTL) -o simv -l compile_verdi.log
 	./simv -q -no_save
-	verdi -ssf waveform.fsdb -play waves_$(TEST).tcl &
+	$(VERDI_HOME)/bin/verdi -dbdir ./simv.daidir -ssf waveform.fsdb -play waves_$(TEST).tcl -nologo &
 
 regress:
 	@for t in all fwd br orig; do \
