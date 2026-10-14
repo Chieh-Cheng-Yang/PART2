@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module performance_monitor (
     input  logic        clk,
     input  logic        reset,

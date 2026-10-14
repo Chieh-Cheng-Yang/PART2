@@ -1,0 +1,10 @@
+vcs -sverilog \
+    top.sv \
+    controller.sv \
+    datapath.sv \
+    performance_monitor.sv \
+    testbench.sv \
+    -top MIPS_Testbench \
+    -debug_access+all \
+    -kdb \
+    -o simv

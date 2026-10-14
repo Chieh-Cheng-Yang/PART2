@@ -1,0 +1,41 @@
+# =========================
+# VCS generated files
+# =========================
+simv
+simv.daidir/
+csrc/
+ucli.key
+DVEfiles/
+DVEFiles/
+
+*.log
+*.vpd
+*.vcd
+*.fsdb
+
+# =========================
+# Verdi generated files
+# =========================
+verdiLog/
+verdi_config_file
+novas.conf
+novas.rc
+novas_dump.log
+
+# =========================
+# Synopsys temporary files
+# =========================
+*.syn
+*.pvl
+*.mr
+*.svf
+command.log
+
+# =========================
+# Editor / OS temporary files
+# =========================
+*~
+*.swp
+*.tmp
+.DS_Store
+Thumbs.db

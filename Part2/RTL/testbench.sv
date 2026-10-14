@@ -31,9 +31,9 @@ module MIPS_Testbench;
 
     // Record waveforms
     initial begin
-        $dumpfile("pipeline.vcd");
-        $dumpvars(0, MIPS_Testbench);
-    end
+	    $fsdbDumpfile("novas.fsdb");
+	    $fsdbDumpvars(0, MIPS_Testbench);
+	end
 
     always @(posedge clk) begin
         if (!reset) begin

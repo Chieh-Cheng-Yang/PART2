@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module controller (
     input  logic [5:0] op, funct,
     output logic       memtoregD,

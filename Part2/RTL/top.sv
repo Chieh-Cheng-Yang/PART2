@@ -14,6 +14,7 @@
 // ============================================================
 // Top-level processor and memory connections
 // ============================================================
+`timescale 1ns/1ps
 module top (
     input  logic        clk, reset,
     output logic [31:0] writedata, dataadr,

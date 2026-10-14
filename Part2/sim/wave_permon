@@ -1,0 +1,32 @@
+# ============================================================
+# PERFMON Report Waveform
+# ============================================================
+
+# Basic signals
+add wave sim:/MIPS_Testbench/clk
+add wave -radix hexadecimal sim:/MIPS_Testbench/dut/mips/dp/instrD
+
+# PERFMON - Decode stage
+add wave sim:/MIPS_Testbench/dut/mips/dp/isPerfmonD
+add wave sim:/MIPS_Testbench/dut/mips/dp/perfmonFlagD
+
+# PERFMON - Execute stage
+add wave sim:/MIPS_Testbench/dut/mips/dp/isPerfmonE
+add wave sim:/MIPS_Testbench/dut/mips/dp/perfmonFlagE
+
+# PERFMON - Memory stage
+add wave sim:/MIPS_Testbench/dut/mips/dp/isPerfmonM
+add wave sim:/MIPS_Testbench/dut/mips/dp/perfmonFlagM
+
+# PERFMON - Writeback stage
+add wave sim:/MIPS_Testbench/dut/mips/dp/isPerfmonW
+add wave sim:/MIPS_Testbench/dut/mips/dp/perfmonFlagW
+
+# Performance counters
+add wave -radix unsigned sim:/MIPS_Testbench/dut/mips/dp/cycleCount
+add wave -radix unsigned sim:/MIPS_Testbench/dut/mips/dp/instructionCount
+
+# Writeback
+add wave -radix unsigned sim:/MIPS_Testbench/dut/mips/dp/destW
+add wave -radix unsigned sim:/MIPS_Testbench/dut/mips/dp/resultW
+add wave sim:/MIPS_Testbench/dut/mips/dp/writeEnableW
